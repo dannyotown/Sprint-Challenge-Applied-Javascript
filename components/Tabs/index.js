@@ -14,6 +14,9 @@ topics.forEach(element => {
     tabs(element);
 });
 })
+.catch((error)=>{
+    console.log(error)
+})
 
 function tabs(textCon){
 let topics = document.querySelector('.topics');

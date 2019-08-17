@@ -42,6 +42,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         articleCard(element.headline,element.authorPhoto,element.authorName)
     });
 })
+.catch((error)=>{
+    console.log(error)
+})
 
 function articleCard(headText,imgsrc, aName){
 let cardContainer = document.querySelector('.cards-container');
