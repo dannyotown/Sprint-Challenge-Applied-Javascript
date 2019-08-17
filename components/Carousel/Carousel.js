@@ -25,6 +25,13 @@ function carousel(){
 
   let leftButton = document.createElement('div');
   leftButton.classList.add('left-button');
+  leftButton.addEventListener('click',()=>{
+    let images = document.querySelectorAll('.images');
+    let imageArray = Array.from(images);
+    if(imageArray[1].style.display == 'block'){
+      document.images[1].style.display = 'none';
+      document.images[0].style.display = 'block';
+    }})
   caraDiv.appendChild(leftButton)
 
   let imgs = ['./assets/carousel/mountains.jpeg','./assets/carousel/computer.jpeg','./assets/carousel/trees.jpeg','./assets/carousel/turntable.jpeg'];
@@ -51,11 +58,11 @@ function carousel(){
       document.images[0].style.display = 'none';
       document.images[1].style.display = 'block';
     }
-    function cardRight(){
-      var count = 0;
-      return count += 1;
-    }
-   console.log(cardCount());
+  //   function cardRight(){
+  //     var count = 0;
+  //     return count += 1;
+  //   }
+  //  console.log(cardCount());
   })
   caraDiv.appendChild(rightButton)
 
