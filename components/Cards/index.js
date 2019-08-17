@@ -20,13 +20,12 @@
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((response)=>{
 
-    let articles =response.data.articles;
-    let bootstrap = articles.bootstrap
-    let javascript = articles.javascript
-    let jquery = articles.jquery
-    let node = articles.node
-    let technology = articles.technology;
-
+    let bootstrap = response.data.articles.bootstrap
+    let javascript = response.data.articles.javascript
+    let jquery = response.data.articles.jquery
+    let node = response.data.articles.node
+    let technology = response.data.articles.technology;
+   
     bootstrap.forEach(element => {
         articleCard(element.headline,element.authorPhoto,element.authorName)
     });
