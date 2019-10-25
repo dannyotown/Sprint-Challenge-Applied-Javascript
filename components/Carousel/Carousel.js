@@ -17,3 +17,57 @@
     <div class="right-button"> > </div>
   </div>
 */
+function carousel(){
+  let caraContainer = document.querySelector('.carousel-container');
+  let caraDiv = document.createElement('div');
+  caraDiv.classList.add('carousel');
+  caraContainer.appendChild(caraDiv);
+
+  let leftButton = document.createElement('div');
+  leftButton.classList.add('left-button');
+  leftButton.addEventListener('click',()=>{
+    let images = document.querySelectorAll('.images');
+    let imageArray = Array.from(images);
+    if(imageArray[1].style.display == 'block'){
+      document.images[1].style.display = 'none';
+      document.images[0].style.display = 'block';
+    }})
+  caraDiv.appendChild(leftButton)
+
+  let imgs = ['./assets/carousel/mountains.jpeg','./assets/carousel/computer.jpeg','./assets/carousel/trees.jpeg','./assets/carousel/turntable.jpeg'];
+  
+  function img(imgarray){
+    imgarray.forEach((ele)=>{
+      let img = document.createElement('img');
+      img.src = ele;
+      img.classList.add('images');
+      caraDiv.appendChild(img);
+      if(ele === './assets/carousel/mountains.jpeg'){
+        img.style.display = 'block';
+      }
+    })
+  }
+  img(imgs);
+
+  let rightButton = document.createElement('div');
+  rightButton.classList.add('right-button');
+  rightButton.addEventListener('click',()=>{
+    let images = document.querySelectorAll('.images');
+    let imageArray = Array.from(images);
+    if(imageArray[0].style.display == 'block'){
+      document.images[0].style.display = 'none';
+      document.images[1].style.display = 'block';
+    }
+  //   function cardRight(){
+  //     var count = 0;
+  //     return count += 1;
+  //   }
+  //  console.log(cardCount());
+  })
+  caraDiv.appendChild(rightButton)
+
+
+  return caraDiv
+}
+
+carousel();
